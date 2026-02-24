@@ -14,9 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         <Notification />
         <Navbar />
         {children}
@@ -25,3 +25,4 @@ export default function RootLayout({
     </html>
   )
 }
+
