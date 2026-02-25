@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Restaurant Massimo
 
-## Getting Started
+Веб-приложение на `Next.js` (App Router) для демонстрации food-ordering интерфейса: каталог, карточка товара, корзина, контактная форма и служебные страницы.
 
-First, run the development server:
+## Технологии
+
+- `Next.js 16` + `React 19`
+- `TypeScript`
+- `Tailwind CSS v4`
+- `Redux Toolkit` + `react-redux`
+- `react-countdown`
+
+## Что реализовано
+
+- Главная страница с промо-блоками и featured товарами.
+- Динамические страницы категорий: `/menu/[category]`.
+- Динамическая страница товара: `/product/[id]`.
+- Корзина с глобальным состоянием через Redux Toolkit:
+  - добавление товара (`Add to Cart`)
+  - учет количества и опций
+  - удаление позиций
+  - расчет subtotal/total
+  - персист в `localStorage`
+- Контактная страница с клиентской формой и валидацией.
+- Адаптивная навигация (desktop/mobile menu).
+
+## Структура проекта
+
+- `src/app` — роуты App Router и layout.
+- `src/components` — UI-компоненты.
+- `src/store` — Redux store, slice и typed hooks.
+- `src/data.ts` — mock-данные товаров и категорий.
+
+## Запуск локально
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Открой: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Полезные команды
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-## Learn More
+## Примечания
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Данные товаров сейчас моковые (`src/data.ts`).
+- Авторизация/заказы пока демонстрационные и не подключены к backend API.

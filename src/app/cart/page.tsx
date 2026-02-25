@@ -19,9 +19,9 @@ const CartPage = () => {
   const subtotal = useAppSelector(selectSubtotal)
   const dispatch = useAppDispatch()
 
-  const serviceCost = 0
-  const deliveryCost = 0
-  const total = subtotal + serviceCost + deliveryCost
+  const serviceCost:number = 0
+  const deliveryCost:number = 0
+  const total:number = subtotal + serviceCost + deliveryCost
 
   return (
     <div className="h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row">
