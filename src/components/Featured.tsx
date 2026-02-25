@@ -10,7 +10,7 @@ const Featured = () => {
         {featuredProducts.map(item => (
           <div className="w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300 md:w-[50vw] xl:w-[33vw] xl:h-[90vh]" key={item.id}>
             {/* IMAGE CONTAINER */}
-            {item.img && <div className="relative flex-1 w-full hover:rotate-[60deg] transition-all duration-500">
+            {item.img && <div className="relative flex-1 w-full hover:rotate-60 transition-all duration-500">
               <Image src={item.img} alt="" fill className="object-contain" />
             </div>}
 
