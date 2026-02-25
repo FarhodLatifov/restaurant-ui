@@ -1,4 +1,4 @@
-﻿import { featuredProducts, pizzas } from "@/data"
+﻿import { burgers, featuredProducts, pastas, pizzas } from "@/data"
 import Image from "next/image"
 import Price from "@/components/Price"
 
@@ -9,7 +9,7 @@ type Props = {
 const SingleProductPage = async ({ params }: Props) => {
   const { id } = await params
   const productId = Number(id)
-  const product = [...featuredProducts, ...pizzas].find((item) => item.id === productId)
+  const product = [...featuredProducts, ...pizzas, ...burgers, ...pastas].find((item) => item.id === productId)
 
   if (!product) {
     return (
@@ -27,7 +27,7 @@ const SingleProductPage = async ({ params }: Props) => {
       <div className="h-1/2 flex flex-col gap-4 md:h-[70%] md:justify-center md:gap-6 xl:gap-8">
         <h2 className="uppercase text-3xl font-bold xl:text-5xl">{product.title}</h2>
         <p>{product.desc}</p>
-        <Price price={product.price} options={product.options} />
+        <Price id={product.id} title={product.title} img={product.img} price={product.price} options={product.options} />
       </div>
     </div>
   )

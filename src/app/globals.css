@@ -1,1 +1,33 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
+
+:root {
+  --scrollbar-size: 10px;
+  --scrollbar-track: #ffe4e6;
+  --scrollbar-thumb: linear-gradient(180deg, #f97316 0%, #ef4444 100%);
+  --scrollbar-thumb-hover: linear-gradient(180deg, #ea580c 0%, #dc2626 100%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ef4444 #ffe4e6;
+}
+
+*::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 2px solid #ffe4e6;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}

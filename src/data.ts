@@ -1,4 +1,4 @@
-type ProductOption = {
+﻿type ProductOption = {
   title: string;
   additionalPrice: number;
 };
@@ -192,6 +192,60 @@ export const pizzas: Products = [
     desc: "A classic Italian delight featuring a thin crust topped with a medley of fresh vegetables, including bell peppers, onions, mushrooms, and olives.",
     img: "/temporary/p11.png",
     price: 24.9,
+    options: [
+      { title: "Small", additionalPrice: 0 },
+      { title: "Medium", additionalPrice: 4 },
+      { title: "Large", additionalPrice: 6 },
+    ],
+  },
+];
+
+export const pastas: Products = [
+  {
+    id: 8,
+    title: "Garlic Parmesan Linguine",
+    desc: "A garlic lover's delight featuring linguine smothered in a creamy Parmesan sauce, finished with fresh herbs and cracked black pepper.",
+    img: "/temporary/p7.png",
+    price: 28.9,
+    options: [
+      { title: "Small", additionalPrice: 0 },
+      { title: "Medium", additionalPrice: 4 },
+      { title: "Large", additionalPrice: 6 },
+    ],
+  },
+  {
+    id: 10,
+    title: "Spicy Arrabbiata",
+    desc: "Ignite your taste buds with this fiery creation, combining penne pasta in a spicy tomato sauce infused with garlic, chili flakes, and olive oil.",
+    img: "/temporary/p4.png",
+    price: 26.9,
+    options: [
+      { title: "Small", additionalPrice: 0 },
+      { title: "Medium", additionalPrice: 4 },
+      { title: "Large", additionalPrice: 6 },
+    ],
+  },
+];
+
+export const burgers: Products = [
+  {
+    id: 7,
+    title: "Hawaiian Teriyaki",
+    desc: "Experience a taste of the tropics with a juicy beef patty glazed in tangy teriyaki sauce, topped with grilled pineapple and fresh lettuce.",
+    img: "/temporary/p9.png",
+    price: 29.9,
+    options: [
+      { title: "Small", additionalPrice: 0 },
+      { title: "Medium", additionalPrice: 4 },
+      { title: "Large", additionalPrice: 6 },
+    ],
+  },
+  {
+    id: 11,
+    title: "Jalapeño Fiesta",
+    desc: "Turn up the heat with a zesty blend of jalapeños, melted cheese, and savory beef on a crispy crust, delivering a fiesta of flavors in every bite.",
+    img: "/temporary/p5.png",
+    price: 29.9,
     options: [
       { title: "Small", additionalPrice: 0 },
       { title: "Medium", additionalPrice: 4 },

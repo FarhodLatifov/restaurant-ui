@@ -1,6 +1,7 @@
 ﻿"use client"
 
 import { useEffect, useState } from "react"
+import { useCart } from "@/context/CartContext"
 
 type Option = {
   title: string
@@ -8,19 +9,26 @@ type Option = {
 }
 
 type Props = {
+  id: number
+  title: string
+  img: string
   price: number
   options?: Option[]
 }
 
-const Price = ({ price, options = [] }: Props) => {
+const Price = ({ id, title, img, price, options = [] }: Props) => {
   const [quantity, setQuantity] = useState(1)
   const [selected, setSelected] = useState(0)
   const [total, setTotal] = useState(price)
+  const { addToCart } = useCart()
 
   useEffect(() => {
     const additional = options[selected]?.additionalPrice ?? 0
     setTotal(quantity * (price + additional))
   }, [quantity, selected, options, price])
+
+  const selectedOption = options[selected]
+  const unitPrice = price + (selectedOption?.additionalPrice ?? 0)
 
   return (
     <div className="flex flex-col gap-4">
@@ -58,7 +66,19 @@ const Price = ({ price, options = [] }: Props) => {
           </div>
         </div>
 
-        <button className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500">
+        <button
+          onClick={() =>
+            addToCart({
+              id,
+              title,
+              img,
+              unitPrice,
+              quantity,
+              optionTitle: selectedOption?.title,
+            })
+          }
+          className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500"
+        >
           Add to Cart
         </button>
       </div>
